@@ -1,0 +1,160 @@
+/* ============================================================
+   responsive.css — Mobile-first breakpoints for FinFlow
+   ============================================================ */
+
+/* ── Tablet (≤ 1024px) ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pie-wrap { height: 260px; }
+  .bar-wrap { height: 260px; }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Tablet small (≤ 768px) ──────────────────────────────── */
+@media (max-width: 768px) {
+  /* Sidebar becomes slide-in drawer */
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    transform: translateX(-100%);
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .top-header {
+    padding: 12px 16px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card-amount {
+    font-size: 24px;
+  }
+
+  /* Hide some header buttons on small screens */
+  .header-add-btn { display: none; }
+
+  .filter-controls {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .filter-select {
+    width: auto;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-box {
+    max-width: 95%;
+    margin: 0 12px;
+  }
+
+  .toast-container {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .toast {
+    min-width: unset;
+  }
+}
+
+/* ── Mobile (≤ 480px) ────────────────────────────────────── */
+@media (max-width: 480px) {
+  .page-title { font-size: 16px; }
+  .page-date  { display: none; }
+
+  .icon-btn[title="Export CSV"],
+  .icon-btn[title="Add Category"] {
+    display: none;
+  }
+
+  .summary-card { padding: 16px; }
+
+  .card-amount { font-size: 22px; }
+
+  .card { padding: 16px; }
+
+  .tx-item { padding: 10px 10px; }
+
+  .tx-icon {
+    width: 36px; height: 36px;
+    font-size: 16px;
+  }
+
+  .pie-wrap { height: 220px; }
+  .bar-wrap { height: 220px; }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .modal-footer .btn-ghost,
+  .modal-footer .btn-primary,
+  .modal-footer .btn-danger {
+    width: 100%;
+  }
+
+  .filters-bar {
+    flex-direction: column;
+  }
+
+  .filter-controls {
+    width: 100%;
+  }
+
+  .filter-select {
+    flex: 1 1 45%;
+  }
+}
+
+/* ── Large screens (≥ 1400px) ────────────────────────────── */
+@media (min-width: 1400px) {
+  :root { --sidebar-w: 260px; }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card-amount { font-size: 32px; }
+
+  .section { padding: 28px 36px; }
+}
